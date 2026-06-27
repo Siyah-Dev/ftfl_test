@@ -21,7 +21,14 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     try {
       final profiles = await getUserDataUsecase();
 
-      emit(state.copyWith(status: HomeStatus.success, userDataList: profiles, currentIndex: 0));
+      emit(
+        state.copyWith(
+          status: HomeStatus.success,
+          userDataList: profiles,
+          currentIndex: 0,
+          refreshKey: state.refreshKey + 1,
+        ),
+      );
     } catch (e) {
       emit(state.copyWith(status: HomeStatus.failure, errorMessage: e.toString()));
     }
@@ -31,7 +38,14 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     try {
       final profiles = await getUserDataUsecase();
 
-      emit(state.copyWith(status: HomeStatus.success, userDataList: profiles, currentIndex: 0));
+      emit(
+        state.copyWith(
+          status: HomeStatus.success,
+          userDataList: profiles,
+          currentIndex: 0,
+          refreshKey: state.refreshKey + 1,
+        ),
+      );
     } catch (e) {
       emit(state.copyWith(status: HomeStatus.failure, errorMessage: e.toString()));
     }

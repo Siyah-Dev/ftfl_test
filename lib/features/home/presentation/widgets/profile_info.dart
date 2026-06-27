@@ -23,7 +23,7 @@ class ProfileInfo extends StatelessWidget {
                 profile.name,
                 style: const TextStyle(
                   color: Colors.white,
-                  fontSize: 30,
+                  fontSize: 24,
                   fontWeight: FontWeight.bold,
                 ),
                 maxLines: 2,

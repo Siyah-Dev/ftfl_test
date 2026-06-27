@@ -36,6 +36,7 @@ class HomePage extends StatelessWidget {
                         child: SizedBox(
                           height: MediaQuery.of(context).size.height * .72,
                           child: CardStack(
+                            key: ValueKey(state.refreshKey),
                             profiles: state.userDataList,
                             bloc: context.read<HomeBloc>(),
                           ),

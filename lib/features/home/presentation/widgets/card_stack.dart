@@ -36,6 +36,9 @@ class CardStack extends StatelessWidget {
       ),
 
       onSwipe: (previousIndex, currentIndex, direction) {
+        if (previousIndex == profiles.length - 1) {
+          return false;
+        }
         if (currentIndex != null) {
           bloc.add(CardChanged(currentIndex));
         }

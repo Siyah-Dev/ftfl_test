@@ -12,12 +12,13 @@ class HomeState extends Equatable {
   final int currentIndex;
 
   final String? errorMessage;
-
+  final int refreshKey;
   const HomeState({
     this.status = HomeStatus.initial,
     this.userDataList = const [],
     this.currentIndex = 0,
     this.errorMessage,
+    this.refreshKey = 0,
   });
 
   UserDataEntity? get currentProfile {
@@ -35,15 +36,17 @@ class HomeState extends Equatable {
     List<UserDataEntity>? userDataList,
     int? currentIndex,
     String? errorMessage,
+    int? refreshKey,
   }) {
     return HomeState(
       status: status ?? this.status,
       userDataList: userDataList ?? this.userDataList,
       currentIndex: currentIndex ?? this.currentIndex,
       errorMessage: errorMessage ?? this.errorMessage,
+      refreshKey: refreshKey ?? this.refreshKey,
     );
   }
 
   @override
-  List<Object?> get props => [status, userDataList, currentIndex, errorMessage];
+  List<Object?> get props => [status, userDataList, currentIndex, errorMessage, refreshKey];
 }
