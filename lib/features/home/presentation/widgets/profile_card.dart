@@ -64,7 +64,7 @@ class ProfileCard extends StatelessWidget {
                   ProfileBadges(
                     match: profile.match,
                     trust: profile.trust,
-                    replyTime: profile.replyTime,
+                    replyTime: profile.formattedReplyTime,
                   ),
 
                   const SizedBox(height: 18),

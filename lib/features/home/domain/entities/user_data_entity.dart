@@ -34,6 +34,10 @@ class UserDataEntity extends Equatable {
     required this.relationship,
   });
 
+  String get formattedReplyTime {
+    return '${replyTime.replaceAll(' minutes', 'm').replaceAll(' minute', 'm').replaceAll(' mins', 'm').replaceAll(' min', 'm').replaceAll(' hours', 'h').replaceAll(' hour', 'h')} Reply';
+  }
+
   @override
   List<Object?> get props => [
     id,
