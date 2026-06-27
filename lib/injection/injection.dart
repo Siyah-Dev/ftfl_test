@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:ftfl_task/core/network/dio_client.dart';
 import 'package:ftfl_task/features/home/data/datasource/remote/home_remote_datasource.dart';
 import 'package:ftfl_task/features/home/data/repositories/home_repo_impl.dart';
 import 'package:ftfl_task/features/home/domain/repositories/home_repo.dart';
@@ -9,7 +10,7 @@ import 'package:get_it/get_it.dart';
 final getIt = GetIt.instance;
 
 Future<void> configureDependencies() async {
-  getIt.registerLazySingleton<Dio>(() => Dio());
+  getIt.registerLazySingleton<Dio>(() => DioClient.dio);
 
   getIt.registerLazySingleton<HomeRemoteDatasource>(() => HomeRemoteDatasourceImpl(getIt()));
 

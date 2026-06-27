@@ -32,7 +32,6 @@ class UserDataModel extends UserDataEntity {
 
       country: json["location"]["country"],
 
-      // Demo values until real API is available
       match: 70 + (age % 30),
 
       trust: 95 + (age % 5),

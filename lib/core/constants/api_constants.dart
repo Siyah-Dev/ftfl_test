@@ -5,5 +5,5 @@ class ApiConstants {
   static const String baseUrl = 'https://randomuser.me';
 
   // Endpoints
-  static const String users = '/api';
+  static const String users = '/api/';
 }
