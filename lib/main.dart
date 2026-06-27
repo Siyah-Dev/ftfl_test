@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ftfl_task/features/dashboard/presentation/pages/dashboard_page.dart';
 
 import 'injection/injection.dart';
 import 'features/home/presentation/bloc/home_bloc.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: BlocProvider(
         create: (_) => getIt<HomeBloc>()..add(const HomeStarted()),
-        child: const HomePage(),
+        child: const DashboardPage(),
       ),
     );
   }
