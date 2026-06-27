@@ -5,9 +5,9 @@ import 'home_event.dart';
 import 'home_state.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
-  final GetUserDataUsecase getProfilesUsecase;
+  final GetUserDataUsecase getUserDataUsecase;
 
-  HomeBloc({required this.getProfilesUsecase}) : super(const HomeState()) {
+  HomeBloc({required this.getUserDataUsecase}) : super(const HomeState()) {
     on<HomeStarted>(_onLoad);
 
     on<HomeRefreshed>(_onRefresh);
@@ -19,7 +19,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     emit(state.copyWith(status: HomeStatus.loading));
 
     try {
-      final profiles = await getProfilesUsecase();
+      final profiles = await getUserDataUsecase();
 
       emit(state.copyWith(status: HomeStatus.success, userDataList: profiles, currentIndex: 0));
     } catch (e) {
@@ -29,7 +29,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   Future<void> _onRefresh(HomeRefreshed event, Emitter<HomeState> emit) async {
     try {
-      final profiles = await getProfilesUsecase();
+      final profiles = await getUserDataUsecase();
 
       emit(state.copyWith(status: HomeStatus.success, userDataList: profiles, currentIndex: 0));
     } catch (e) {
