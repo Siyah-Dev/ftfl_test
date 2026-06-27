@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ftfl_task/core/theme/app_theme.dart';
 import 'package:ftfl_task/features/dashboard/presentation/pages/dashboard_page.dart';
 
 import 'injection/injection.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: AppTheme.light,
       home: BlocProvider(
         create: (_) => getIt<HomeBloc>()..add(const HomeStarted()),
         child: const DashboardPage(),
