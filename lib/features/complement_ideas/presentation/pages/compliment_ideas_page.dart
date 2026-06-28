@@ -19,10 +19,10 @@ class _ComplimentIdeasPageState extends State<ComplimentIdeasPage> {
   String? selectedCompliment;
 
   final List<String> compliments = [
-    "Not gonna lie, your smile stopped my scroll 😍",
+    "Not gonna lie, your smile stopped my scroll",
     "You're trouble, I can already tell — the good kind.",
     "If you're as fun in person as your profile, I'm in.",
-    "I think we'd make a dangerously good team ☕📱",
+    "I think we'd make a dangerously good team",
     "You've got a vibe I can't quite look away from.",
     "Coffee, you, and good conversation — when's good for you?",
   ];

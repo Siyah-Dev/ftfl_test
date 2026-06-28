@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ftfl_task/core/constants/app_colors.dart';
+import 'package:ftfl_task/features/chat/presentation/pages/personal_chat_page.dart';
 import 'package:ftfl_task/features/complement_ideas/presentation/pages/compliment_ideas_page.dart';
 import 'compliment_actions.dart';
 import 'compliment_like_button.dart';
@@ -96,6 +97,7 @@ class _ComplimentBottomSheetState extends State<ComplimentBottomSheet> {
                           return ComplimentSendButton(
                             enabled: value.text.trim().isNotEmpty,
                             onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => PersonalChatPage(),));
                             },
                           );
                         },
