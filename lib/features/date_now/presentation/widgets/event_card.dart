@@ -97,18 +97,14 @@ class EventCard extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Positioned(
-                      bottom: 26,
-                      right: 22,
-                      child: Container(
-                        width: 30,
-                        height: 30,
-                        decoration: BoxDecoration(
-                          color: AppColors.primaryLight.withAlpha(50),
-                          shape: BoxShape.circle
-                        ),
-                        child:  Icon(Icons.flag_outlined, color: AppColors.primary.withAlpha(150), size: 20),
+                    Container(
+                      width: 30,
+                      height: 30,
+                      decoration: BoxDecoration(
+                        color: AppColors.primaryLight.withAlpha(50),
+                        shape: BoxShape.circle
                       ),
+                      child:  Icon(Icons.flag_outlined, color: AppColors.primary.withAlpha(150), size: 20),
                     ),
                   ],
                 ),

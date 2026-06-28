@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ftfl_task/features/home/data/model/interest_item_model.dart';
 import 'package:ftfl_task/features/home/domain/entities/interest_entity.dart';
 import 'package:ftfl_task/features/home/presentation/widgets/iterest_chip.dart';
 

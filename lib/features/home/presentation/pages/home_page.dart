@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ftfl_task/core/constants/app_colors.dart';
-import 'package:ftfl_task/features/home/presentation/bloc/home_event.dart';
-import 'package:ftfl_task/features/home/presentation/extensions/user_data_entity_extension.dart';
-import 'package:ftfl_task/features/home/presentation/widgets/big_dream_widget.dart';
-import 'package:ftfl_task/features/home/presentation/widgets/dating_goal.dart';
-import 'package:ftfl_task/features/home/presentation/widgets/home_app_bar.dart';
-import 'package:ftfl_task/features/home/presentation/widgets/home_quote_widget.dart';
-import 'package:ftfl_task/features/home/presentation/widgets/home_section_widget.dart';
-import 'package:ftfl_task/features/home/presentation/widgets/interest_and_hobbies.dart';
-import 'package:ftfl_task/features/home/presentation/widgets/personal_info_card.dart';
-import 'package:ftfl_task/features/home/presentation/widgets/photo_card_widget.dart';
-import 'package:ftfl_task/features/home/presentation/widgets/profile_badges.dart';
-import 'package:ftfl_task/features/home/presentation/widgets/video_preview_card.dart';
-import 'package:google_fonts/google_fonts.dart';
-
+import '../bloc/home_event.dart';
+import '../extensions/user_data_entity_extension.dart';
+import '../widgets/big_dream_widget.dart';
+import '../widgets/dating_goal.dart';
+import '../widgets/home_app_bar.dart';
+import '../widgets/home_quote_widget.dart';
+import '../widgets/home_section_widget.dart';
+import '../widgets/interest_and_hobbies.dart';
+import '../widgets/personal_info_card.dart';
+import '../widgets/photo_card_widget.dart';
+import '../widgets/profile_badges.dart';
+import '../widgets/video_preview_card.dart';
 import '../bloc/home_bloc.dart';
 import '../bloc/home_state.dart';
 import '../widgets/card_stack.dart';
@@ -92,7 +89,6 @@ class HomePage extends StatelessWidget {
                       HomeQuoteWidget(
                         title: 'The way to win me over In...',
                         profile: state.userDataList[state.currentIndex],
-                        onGiftPressed: () {},
                       ),
                       HomeSectionWidget(
                         title: 'CAREER & AMBITIONS',
@@ -114,7 +110,6 @@ class HomePage extends StatelessWidget {
                       HomeQuoteWidget(
                         title: 'My simple pleasure...',
                         profile: state.userDataList[state.currentIndex],
-                        onGiftPressed: () {},
                       ),
                       HomeSectionWidget(
                         title: 'INTERESTS & HOBBIES',
@@ -136,7 +131,6 @@ class HomePage extends StatelessWidget {
                       ),HomeQuoteWidget(
                         title: "We'll got along if...",
                         profile: state.userDataList[(state.currentIndex)],
-                        onGiftPressed: () {},
                       ),
                     ],
                   ),

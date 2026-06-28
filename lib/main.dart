@@ -6,7 +6,6 @@ import 'package:ftfl_task/features/dashboard/presentation/pages/dashboard_page.d
 import 'injection/injection.dart';
 import 'features/home/presentation/bloc/home_bloc.dart';
 import 'features/home/presentation/bloc/home_event.dart';
-import 'features/home/presentation/pages/home_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

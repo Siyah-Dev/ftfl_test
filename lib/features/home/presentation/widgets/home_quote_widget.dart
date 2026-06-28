@@ -1,19 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:ftfl_task/core/constants/app_colors.dart';
+import 'package:ftfl_task/core/helpers/app_bottom_sheets.dart';
 import 'package:ftfl_task/features/home/domain/entities/user_data_entity.dart';
 import 'package:ftfl_task/features/home/presentation/widgets/action_button.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomeQuoteWidget extends StatelessWidget {
-  const HomeQuoteWidget({
-    super.key,
-    this.title,
-    required this.profile,
-    required this.onGiftPressed,
-  });
+  const HomeQuoteWidget({super.key, this.title, required this.profile});
   final String? title;
   final UserDataEntity profile;
-  final void Function()? onGiftPressed;
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
@@ -47,7 +42,9 @@ class HomeQuoteWidget extends StatelessWidget {
               ActionButton(
                 size: 30,
                 color: AppColors.white,
-                onTap: onGiftPressed,
+                onTap: () {
+                  AppBottomSheets.compliment(context);
+                },
                 child: const Text("🌹", style: TextStyle(fontSize: 18)),
               ),
             ],

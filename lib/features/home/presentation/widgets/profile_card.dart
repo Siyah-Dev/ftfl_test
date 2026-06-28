@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ftfl_task/core/helpers/app_bottom_sheets.dart';
 import 'package:ftfl_task/features/home/domain/entities/user_data_entity.dart';
 
 import 'action_button.dart';
@@ -79,7 +80,9 @@ class ProfileCard extends StatelessWidget {
                       ActionButton(
                         size: 44,
                         color: Colors.white,
-                        onTap: onGiftPressed,
+                        onTap: () {
+                          AppBottomSheets.compliment(context);
+                        },
                         child: const Text("🌹", style: TextStyle(fontSize: 22)),
                       ),
                     ],

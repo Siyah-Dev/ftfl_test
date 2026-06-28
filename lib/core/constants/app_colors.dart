@@ -11,8 +11,13 @@ class AppColors {
   static const transparentBlack13 = Color(0x22000000); // 13% opacity
   static const transparentBlack53 = Color(0x88000000); // 53% opacity
   static const grey = Color(0xFF6B7280);
+  static const lightGrey = Color.fromARGB(255, 154, 158, 167);
   static const green = Color(0xFF22C55E);
   static const purple = Colors.purple;
   static const blue = Colors.blue;
   static const yellow = Colors.yellow;
+
+  static const Color complimentGradientStart = Color(0xFFFDECEF);
+  static const Color complimentGradientMiddle = Color(0xFFF4ECFD);
+  static const Color complimentGradientEnd = Color(0xFFEAF3FF);
 }

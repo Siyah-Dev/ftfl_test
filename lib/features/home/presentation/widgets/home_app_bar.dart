@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ftfl_task/core/constants/app_colors.dart';
 
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({super.key});
@@ -17,11 +18,11 @@ class HomeAppBar extends StatelessWidget {
             height: 38,
             padding: const EdgeInsets.symmetric(horizontal: 18),
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: AppColors.white,
               borderRadius: BorderRadius.circular(24),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(.06),
+                  color: AppColors.black.withValues(alpha: .06),
                   blurRadius: 12,
                   offset: const Offset(0, 4),
                 ),
@@ -29,7 +30,7 @@ class HomeAppBar extends StatelessWidget {
             ),
             child: const Row(
               children: [
-                CircleAvatar(radius: 3, backgroundColor: Color(0xffFF4D67)),
+                CircleAvatar(radius: 3, backgroundColor:AppColors.primary),
                 SizedBox(width: 8),
                 Text("Daily 25", style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600)),
               ],
@@ -56,7 +57,7 @@ class HomeAppBar extends StatelessWidget {
                 child: Container(
                   width: 8,
                   height: 8,
-                  decoration: const BoxDecoration(color: Color(0xffFF4D67), shape: BoxShape.circle),
+                  decoration: const BoxDecoration(color: AppColors.primary, shape: BoxShape.circle),
                 ),
               ),
             ],
@@ -76,14 +77,14 @@ class _CircleButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.white,
+      color: AppColors.white,
       elevation: 1,
-      shadowColor: Colors.black12,
+      shadowColor: AppColors.transparentBlack13,
       shape: const CircleBorder(),
       child: InkWell(
         onTap: onTap,
         customBorder: const CircleBorder(),
-        child: SizedBox(width: 42, height: 42, child: Icon(icon, size: 22, color: Colors.black87)),
+        child: SizedBox(width: 42, height: 42, child: Icon(icon, size: 22, color: AppColors.black)),
       ),
     );
   }
