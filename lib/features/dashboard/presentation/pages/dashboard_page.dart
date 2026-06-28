@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ftfl_task/features/dashboard/presentation/bloc/dashboard_bloc.dart';
 import 'package:ftfl_task/features/dashboard/presentation/widgets/app_bottom_nav_bar.dart';
+import 'package:ftfl_task/features/date_now/presentation/pages/date_now_page.dart';
 import '../../../home/presentation/pages/home_page.dart';
 
 class DashboardPage extends StatelessWidget {
@@ -22,7 +23,7 @@ class _DashboardView extends StatelessWidget {
       builder: (context, state) {
         final pages = [
           const HomePage(),
-          const Center(child: Text('Date Now')),
+          const DateNowPage(),
           const Center(child: Text('Admirers')),
           const Center(child: Text('Chat')),
           const Center(child: Text('Events')),

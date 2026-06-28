@@ -12,4 +12,7 @@ class AppColors {
   static const transparentBlack53 = Color(0x88000000); // 53% opacity
   static const grey = Color(0xFF6B7280);
   static const green = Color(0xFF22C55E);
+  static const purple = Colors.purple;
+  static const blue = Colors.blue;
+  static const yellow = Colors.yellow;
 }
