@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ftfl_task/core/constants/app_colors.dart';
 
 class ActionButton extends StatelessWidget {
   final Widget child;
@@ -16,18 +17,31 @@ class ActionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: color,
-      elevation: 8,
-      shadowColor: Colors.black12,
-      borderRadius: BorderRadius.circular(size),
-      child: InkWell(
+    return Container(
+      decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(size),
-        onTap: onTap,
-        child: SizedBox(
-          width: size,
-          height: size,
-          child: Center(child: child),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withAlpha(10),
+            blurRadius: 1,
+            spreadRadius: 1,
+            offset: const Offset(0, 0),
+          ),
+        ],
+      ),
+      child: Material(
+        color: color,
+        // elevation: 10,
+        shadowColor: Colors.black26,
+        borderRadius: BorderRadius.circular(size),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(size),
+          onTap: onTap,
+          child: SizedBox(
+            width: size,
+            height: size,
+            child: Center(child: child),
+          ),
         ),
       ),
     );

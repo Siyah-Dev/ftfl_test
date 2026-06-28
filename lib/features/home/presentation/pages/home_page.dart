@@ -1,7 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ftfl_task/core/constants/app_colors.dart';
 import 'package:ftfl_task/features/home/presentation/bloc/home_event.dart';
+import 'package:ftfl_task/features/home/presentation/extensions/user_data_entity_extension.dart';
+import 'package:ftfl_task/features/home/presentation/widgets/big_dream_widget.dart';
+import 'package:ftfl_task/features/home/presentation/widgets/dating_goal.dart';
 import 'package:ftfl_task/features/home/presentation/widgets/home_app_bar.dart';
+import 'package:ftfl_task/features/home/presentation/widgets/home_quote_widget.dart';
+import 'package:ftfl_task/features/home/presentation/widgets/home_section_widget.dart';
+import 'package:ftfl_task/features/home/presentation/widgets/interest_and_hobbies.dart';
+import 'package:ftfl_task/features/home/presentation/widgets/personal_info_card.dart';
+import 'package:ftfl_task/features/home/presentation/widgets/photo_card_widget.dart';
+import 'package:ftfl_task/features/home/presentation/widgets/profile_badges.dart';
+import 'package:ftfl_task/features/home/presentation/widgets/video_preview_card.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../bloc/home_bloc.dart';
 import '../bloc/home_state.dart';
@@ -41,6 +53,90 @@ class HomePage extends StatelessWidget {
                             bloc: context.read<HomeBloc>(),
                           ),
                         ),
+                      ),
+                      SliverToBoxAdapter(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 25),
+                          child: Center(
+                            child: ProfileBadges(
+                              match: state.userDataList[state.currentIndex].match,
+                              trust: state.userDataList[state.currentIndex].trust,
+                              replyTime:
+                                  state.userDataList[state.currentIndex].formattedReplyTime ?? '',
+                              badgeColor: Colors.white,
+                              labelColor: Colors.black,
+                            ),
+                          ),
+                        ),
+                      ),
+                      HomeSectionWidget(
+                        title: 'ABOUT',
+                        child: Text(
+                          state.userDataList[state.currentIndex].about ?? '',
+                          style: const TextStyle(fontWeight: FontWeight.w500),
+                          textAlign: TextAlign.justify,
+                        ),
+                      ),
+                      HomeSectionWidget(
+                        title: 'THE BASICS',
+                        child: ProfileInfoCard(
+                          items: state.userDataList[state.currentIndex].basicInfoItems,
+                        ),
+                      ),
+                      HomeSectionWidget(
+                        child: VideoPreviewCard(
+                          imageUrl: state.userDataList[state.currentIndex].image ?? '',
+                          duration: '0.28',
+                        ),
+                      ),
+                      HomeQuoteWidget(
+                        title: 'The way to win me over In...',
+                        profile: state.userDataList[state.currentIndex],
+                        onGiftPressed: () {},
+                      ),
+                      HomeSectionWidget(
+                        title: 'CAREER & AMBITIONS',
+                        child: ProfileInfoCard(
+                          items: state.userDataList[state.currentIndex].careerItems,
+                          bottomChild: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 15),
+                            child: BigDreamWidget(
+                              content: state.userDataList[state.currentIndex].bigDream ?? '',
+                            ),
+                          ),
+                        ),
+                      ),
+                      HomeSectionWidget(
+                        child: PhotoCardWidget(
+                          imageUrl: state.userDataList[state.currentIndex].image ?? '',
+                        ),
+                      ),
+                      HomeQuoteWidget(
+                        title: 'My simple pleasure...',
+                        profile: state.userDataList[state.currentIndex],
+                        onGiftPressed: () {},
+                      ),
+                      HomeSectionWidget(
+                        title: 'INTERESTS & HOBBIES',
+                        child: InterestAndHobbies(
+                          interests: state.userDataList[state.currentIndex].interests,
+                        ),
+                      ),
+                      HomeSectionWidget(
+                        title: 'LIFE STYLE',
+                        child: ProfileInfoCard(
+                          items: state.userDataList[state.currentIndex].lifestyleItems,
+                        ),
+                      ),
+                      DatingGoal(goal: state.userDataList[state.currentIndex].datingGoal ?? ''),
+                      HomeSectionWidget(
+                        child: PhotoCardWidget(
+                          imageUrl: state.userDataList[state.currentIndex].image ?? '',
+                        ),
+                      ),HomeQuoteWidget(
+                        title: "We'll got along if...",
+                        profile: state.userDataList[(state.currentIndex)],
+                        onGiftPressed: () {},
                       ),
                     ],
                   ),

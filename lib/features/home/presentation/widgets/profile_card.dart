@@ -25,7 +25,7 @@ class ProfileCard extends StatelessWidget {
         child: Stack(
           fit: StackFit.expand,
           children: [
-            ProfileImage(image: profile.image),
+            ProfileImage(image: profile.image ?? ''),
 
             const ProfileGradient(),
 
@@ -64,7 +64,7 @@ class ProfileCard extends StatelessWidget {
                   ProfileBadges(
                     match: profile.match,
                     trust: profile.trust,
-                    replyTime: profile.formattedReplyTime,
+                    replyTime: profile.formattedReplyTime ?? '',
                   ),
 
                   const SizedBox(height: 18),

@@ -20,7 +20,7 @@ class ProfileInfo extends StatelessWidget {
             StatusDot(color: Colors.green, size: 10),
             Flexible(
               child: Text(
-                profile.name,
+                profile.name ?? '',
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 24,
@@ -56,8 +56,12 @@ class ProfileInfo extends StatelessWidget {
           ],
         ),
 
-        _InfoTile(title: profile.profession, height: profile.height, icon: Icons.work_outline),
-        _InfoTile(title: profile.relationship, icon: Icons.favorite_outlined),
+        _InfoTile(
+          title: profile.profession ?? '',
+          height: profile.height,
+          icon: Icons.work_outline,
+        ),
+        _InfoTile(title: profile.relationship ?? '', icon: Icons.favorite_outlined),
       ],
     );
   }

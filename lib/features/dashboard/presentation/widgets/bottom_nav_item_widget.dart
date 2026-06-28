@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ftfl_task/core/constants/app_colors.dart';
 
 class BottomNavItemWidget extends StatelessWidget {
   final IconData icon;
@@ -16,7 +17,7 @@ class BottomNavItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = isSelected ? Colors.pink : Colors.black54;
+    final color = isSelected ? AppColors.primary : AppColors.black;
 
     return Expanded(
       child: InkWell(

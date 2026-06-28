@@ -7,12 +7,15 @@ class ProfileBadges extends StatelessWidget {
   final num match;
   final num trust;
   final String replyTime;
-
+  final Color? badgeColor;
+  final Color? labelColor;
   const ProfileBadges({
     super.key,
     required this.match,
     required this.trust,
     required this.replyTime,
+    this.badgeColor,
+    this.labelColor,
   });
 
   @override
@@ -21,9 +24,24 @@ class ProfileBadges extends StatelessWidget {
       spacing: 8,
       runSpacing: 8,
       children: [
-        _Badge(color: Colors.blue, text: "$match% Match"),
-        _Badge(color: Colors.green, text: "$trust% Trust"),
-        _Badge(color: Colors.orange, text: replyTime),
+        _Badge(
+          color: Colors.blue,
+          text: "$match% Match",
+          badgeColor: badgeColor,
+          labelColor: labelColor,
+        ),
+        _Badge(
+          color: Colors.green,
+          text: "$trust% Trust",
+          badgeColor: badgeColor,
+          labelColor: labelColor,
+        ),
+        _Badge(
+          color: Colors.orange,
+          text: replyTime,
+          badgeColor: badgeColor,
+          labelColor: labelColor,
+        ),
       ],
     );
   }
@@ -32,8 +50,9 @@ class ProfileBadges extends StatelessWidget {
 class _Badge extends StatelessWidget {
   final Color color;
   final String text;
-
-  const _Badge({required this.color, required this.text});
+  final Color? badgeColor;
+  final Color? labelColor;
+  const _Badge({required this.color, required this.text, this.badgeColor, this.labelColor});
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +63,7 @@ class _Badge extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
           decoration: BoxDecoration(
-            color: Colors.white.withOpacity(.18),
+            color: badgeColor ?? Colors.white.withOpacity(.18),
             borderRadius: BorderRadius.circular(30),
             border: Border.all(color: Colors.white24),
           ),
@@ -55,8 +74,8 @@ class _Badge extends StatelessWidget {
               const SizedBox(width: 6),
               Text(
                 text,
-                style: const TextStyle(
-                  color: Colors.white,
+                style: TextStyle(
+                  color: labelColor ?? Colors.white,
                   fontWeight: FontWeight.w600,
                   fontSize: 12,
                 ),

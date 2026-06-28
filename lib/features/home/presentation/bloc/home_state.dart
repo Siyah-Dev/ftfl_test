@@ -10,7 +10,6 @@ class HomeState extends Equatable {
   final List<UserDataEntity> userDataList;
 
   final int currentIndex;
-
   final String? errorMessage;
   final int refreshKey;
   const HomeState({
