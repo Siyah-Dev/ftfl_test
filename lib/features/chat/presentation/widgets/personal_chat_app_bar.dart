@@ -11,7 +11,9 @@ class PersonalChatAppBar extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(18, 10, 18, 0),
       child: Row(
         children: [
-          _circleButton(Icons.arrow_back_ios_new),
+          _circleButton(Icons.arrow_back_ios_new, () {
+            Navigator.of(context).pop();
+          },),
 
           const SizedBox(width: 12),
 
@@ -91,11 +93,15 @@ class PersonalChatAppBar extends StatelessWidget {
             ),
           ),
 
-          _circleButton(Icons.call_outlined),
+          _circleButton(Icons.call_outlined, () {
+            
+          },),
 
           const SizedBox(width: 10),
 
-          _circleButton(Icons.videocam_outlined),
+          _circleButton(Icons.videocam_outlined, () {
+            
+          },),
 
           const SizedBox(width: 10),
            InkWell(onTap: () {
@@ -107,7 +113,7 @@ class PersonalChatAppBar extends StatelessWidget {
     );
   }
 
-  Widget _circleButton(IconData icon) {
+  Widget _circleButton(IconData icon, void Function()? onTap) {
     return Container(
       width: 30,
       height: 30,
@@ -118,10 +124,12 @@ class PersonalChatAppBar extends StatelessWidget {
           color: AppColors.grey.withValues(alpha: .15),
         ),
       ),
-      child: Icon(
-        icon,
-        size: 18,
-        color: AppColors.primary,
+      child: InkWell(onTap: onTap,
+        child: Icon(
+          icon,
+          size: 18,
+          color: AppColors.primary,
+        ),
       ),
     );
   }
