@@ -17,6 +17,17 @@ class AppColors {
   static const blue = Colors.blue;
   static const yellow = Colors.yellow;
 
+static const background = Color(0xFFF8F6F4);
+static const border = Color(0xFFECE8E4);
+static const textGrey = Color(0xFF8A8A8A);
+static const lightPink = Color(0xFFFFF6F7);
+static const divider = Color(0xFFF1EEEB);
+
+static const cardShadow = Color(0x14000000);
+static const lightOrange = Color(0xFFFFF4EC);
+static const orange = Color(0xFFF59E0B);
+static const unreadDot = Color(0xFFFF5C7C);
+
   static const Color complimentGradientStart = Color(0xFFFDECEF);
   static const Color complimentGradientMiddle = Color(0xFFF4ECFD);
   static const Color complimentGradientEnd = Color(0xFFEAF3FF);

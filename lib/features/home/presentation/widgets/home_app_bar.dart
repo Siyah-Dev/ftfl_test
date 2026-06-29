@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ftfl_task/core/constants/app_colors.dart';
+import 'package:ftfl_task/features/notification/presentation/pages/notification_page.dart';
 
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({super.key});
@@ -49,7 +50,7 @@ class HomeAppBar extends StatelessWidget {
 
           Stack(
             children: [
-              _CircleButton(icon: Icons.notifications_none, onTap: () {}),
+              _CircleButton(icon: Icons.notifications_none, onTap: () {Navigator.of(context).push(MaterialPageRoute(builder: (context) => NotificationPage(),));}),
 
               Positioned(
                 right: 10,
